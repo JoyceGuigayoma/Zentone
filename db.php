@@ -63,13 +63,8 @@ if (isset($_POST["signup"])) {
     $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $fullName, $email, $hashedPassword);
 
-    if ($stmt->execute()) {
-    echo "<script>
-        alert('Account created successfully!');
-        window.location.href = 'index.php'; // Change this to your actual login file
-    </script>";
-}
-    $stmt->close();
+    
+    $stmtif->close();
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['email'])) {
     $input = json_decode(file_get_contents("php://input"), true);
