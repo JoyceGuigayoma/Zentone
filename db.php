@@ -64,10 +64,11 @@ if (isset($_POST["signup"])) {
     $stmt->bind_param("sss", $fullName, $email, $hashedPassword);
 
     if ($stmt->execute()) {
-        echo "Account created successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+    echo "<script>
+        alert('Account created successfully!');
+        window.location.href = 'index.php'; // Change this to your actual login file
+    </script>";
+}
     $stmt->close();
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['email'])) {
