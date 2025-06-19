@@ -12,9 +12,9 @@ CREATE TABLE users (
 
 CREATE TABLE emotion_logs (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    source VARCHAR(50),
+    email VARCHAR(255) NOT NULL,
     emotion TEXT NOT NULL,
-    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    source VARCHAR(100) NOT NULL,
+    timestamp DATETIME NOT NULL
 );
+
